@@ -10,8 +10,9 @@ I implemented the challenge is in native python, without any added modules frame
 # Notes
 1. I'm using a dictionary to count data. This works well empirically on the given examples.
 I can easily explain this for the states data, since there are only 50 states.
-There is a larger number of occupations (e.g. there are less than 1000 occupations for the largest data set).
+The number of occupations is larger, but not too large (e.g. there are less than 1000 occupations for the largest data set).
 Some other simple alternative could have been using python collections, in particular counter, but there was no need to.
-2. I read the entire file into memory. Again, we could have used some kind of serialization, 
-going iteratively line by line. Since my approach worked well empirically, I didn't find 
-any need to do something more sophisticated. 
+2. I read the entire file into memory. Again, I could have used some kind of serialization, 
+going iteratively line by line. Since my approach worked well empirically, even on large input files,
+I didn't find any need to do something more sophisticated. 
+3. I filter for CERTIFIED status. I ignore all other status, including CERTIFIED-WITHDRAWN.
