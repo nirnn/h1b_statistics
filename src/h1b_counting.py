@@ -4,7 +4,8 @@ import constants as ct
 # return the column number in the header, given a string to search
 def locate_idx(str, lst, is_first = True):
 	idx = [i for i, elem in enumerate(lst) if str in elem]
-	if len(idx) == 0: sys.exit("Cannot locate %s in header. Program aborts!" % str)
+	if len(idx) == 0: 
+		sys.exit("Cannot locate %s in header. Program aborts!" % str)
 	idx = idx[0] if is_first else idx[-1]
 	return idx
 
@@ -14,11 +15,12 @@ def write_top_items_sorted(filename, header, dict, counter, n = 10):
 	with open(filename, "w") as opf:
 		opf.write(header + "\n")
 		for e in dict_sorted[:n]:
-			opf.write(f"{e};{dict[e]};{dict[e]/counter*100:.1f}%\n")
+			opf.write("%s;%s;%.1f%%\n" %(e,dict[e],dict[e]/counter*100))
 
 def main():
 	# check input params
-	if len(sys.argv) < 4: sys.exit(f"usage: {sys.argv[0]} <input file name> <occupations output file name> <states output file name>")
+	if len(sys.argv) < 4: 
+		sys.exit("usage: %s <input file name> <occupations output file name> <states output file name>" % sys.argv[0])
 	input_filename = sys.argv[1]
 	occupations_filename = sys.argv[2]
 	states_filename = sys.argv[3]
