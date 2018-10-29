@@ -4,8 +4,7 @@ import constants as ct
 # return the column number in the header, given a string to search
 def locate_idx(str, lst, is_first = True):
 	idx = [i for i, elem in enumerate(lst) if str in elem]
-	if len(idx) == 0:
-		sys.exit(f"Cannot locate {str} in header. Program aborts!")
+	if len(idx) == 0: sys.exit("Cannot locate %s in header. Program aborts!" % str)
 	idx = idx[0] if is_first else idx[-1]
 	return idx
 
