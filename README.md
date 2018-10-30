@@ -12,6 +12,8 @@ I implemented the challenge is in native python, without any added modules frame
 I can easily explain this for the states data, since there are only 50 states.
 The number of occupations is larger, but not too large (e.g. there are less than 1000 occupations for the largest data set).
 Some other simple alternative could have been using python collections, in particular counter, but there was no need to.
+Using python collections might have made the code clearer, but given your instructions (use basic data structures),
+I decided not to use it.
 2. I read the entire file into memory. Again, I could have used some kind of serialization, 
 going iteratively line by line. Since my approach worked well empirically, even on large input files,
 I didn't find any need to do something more sophisticated. 
